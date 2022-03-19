@@ -21,9 +21,19 @@ spring:
 
   security:
     oauth2:
+    
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8081/auth/realms/vortexbirdBank
+
+#Usar la instrumentacion de Sleuth
+  sleuth:
+    reactor:
+      instrumentation-type: decorate-on-each
+      
+#Conectarse con el servidor de Zipkin
+  zipkin:
+    base-url: http://localhost:9411
 
 #Register in Eureka Server
 eureka:
