@@ -19,9 +19,16 @@ spring:
             allowed-methods: "*"
             allowed-headers: "*"
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/auth/realms/vortexbirdBank
+
 #Register in Eureka Server
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:1111/eureka
-#    register-with-eureka: false
+    register-with-eureka: true
+      
